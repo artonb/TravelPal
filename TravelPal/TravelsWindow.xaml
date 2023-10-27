@@ -1,0 +1,41 @@
+﻿<Window x:Class="TravelPal.TravelsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TravelPal"
+        mc:Ignorable="d"
+        Title="TravelsWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.Background>
+            <ImageBrush ImageSource="Images/TravelPal.jpg"/>
+        </Grid.Background>
+        <Image Width="250" Height="170" Grid.Row="0" Grid.RowSpan="6">
+            <Image.Source>
+                <BitmapImage DecodePixelWidth="300" UriSource="Images/logo-no-background.png"/>
+            </Image.Source>
+        </Image>
+        <Label Name="lblUsername" Grid.Row="0" Grid.Column="1" FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10 0" Foreground="BlanchedAlmond"/>
+        <ListView Grid.Row="1" Grid.Column="1" Grid.RowSpan="5" Margin="20" Background="Transparent" BorderBrush="BlanchedAlmond" Foreground="BlanchedAlmond"/>
+        <Button Content="Details" Grid.Row="6" Grid.Column="1" Width="100" Height="40" HorizontalAlignment="Left" Margin="20 0" Background="Transparent" Foreground="BlanchedAlmond" BorderBrush="BlanchedAlmond" FontSize="15"/>
+        <Button Content="Add Travel" Grid.Row="6" Grid.Column="1" Width="100" Height="40" HorizontalAlignment="Right" Margin="20 0" Background="Transparent" Foreground="BlanchedAlmond" BorderBrush="BlanchedAlmond" FontSize="15"/>
+        <Button Content="Remove" Grid.Row="6" Grid.Column="1" Width="100" Height="40" HorizontalAlignment="Center" Background="Transparent" Foreground="BlanchedAlmond" BorderBrush="BlanchedAlmond" FontSize="15"/>
+        <Button Content="UserDetails" Grid.Row="0" Grid.Column="0" Width="100" Height="40" HorizontalAlignment="Right" Margin="10 0" Background="Transparent" Foreground="BlanchedAlmond" BorderBrush="BlanchedAlmond" FontSize="15"/>
+        <Button Name="howTo" Content="How-To Guide" Grid.Row="6" Grid.Column="0" Width="100" Height="40" HorizontalAlignment="Left" Margin="10 0" Background="Transparent" Foreground="BlanchedAlmond" BorderBrush="BlanchedAlmond" FontSize="15" Click="howTo_Click"/>
+        <Button Name="btnSignOut" Content="Sign Out" Grid.Row="6" Grid.Column="0" Width="100" Height="40" HorizontalAlignment="Center" Background="Transparent" Foreground="BlanchedAlmond" BorderBrush="BlanchedAlmond" FontSize="15" Click="btnSignOut_Click"/>
+    </Grid>
+</Window>

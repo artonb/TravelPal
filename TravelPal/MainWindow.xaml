@@ -5,8 +5,38 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TravelPal"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800"
+        >
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
 
+        <Grid.Background>
+            <ImageBrush ImageSource="Images/TravelPal.jpg"/>
+        </Grid.Background>
+        <Image Width="250" Height="170" Grid.Row="0" Grid.RowSpan="3">
+            <Image.Source>
+                <BitmapImage DecodePixelWidth="300" UriSource="Images/logo-no-background.png"/>
+            </Image.Source>
+        </Image>
+
+        <Label Content="Username" Grid.Row="3" FontSize="30" HorizontalAlignment="Left" Foreground="BlanchedAlmond"/>
+        <TextBox Name="txtUsername" Grid.Row="3" Height="30" Width="200" FontSize="20" Foreground="BlanchedAlmond" HorizontalAlignment="Right" Background="Transparent" BorderBrush="BlanchedAlmond"/>
+        <Label Content="Password" Grid.Row="4" FontSize="30" HorizontalAlignment="Left" Foreground="BlanchedAlmond"/>
+        <PasswordBox Name="txtPassword" Grid.Row="4" Height="30" Width="200" FontSize="20" Foreground="BlanchedAlmond" HorizontalAlignment="Right" Background="Transparent" BorderBrush="BlanchedAlmond"/>
+        <Button Name="btnSignin" Grid.Row="5" FontSize="25" Height="50" Width="150" Margin="200 0 0 0" Content="Sign in" Background="Transparent" BorderBrush="BlanchedAlmond" Foreground="BlanchedAlmond" FontWeight="Bold" Click="btnSignin_Click"/>
+        <Label Grid.Row="4" Grid.Column="1" FontSize="25" Height="50" VerticalAlignment="Bottom" Width="185" Content="Not a user yet?" Background="Transparent" BorderBrush="BlanchedAlmond" Foreground="BlanchedAlmond" FontWeight="Bold" />
+        <Button Name="btnRegister" Grid.Row="5" Grid.Column="1" FontSize="30" Height="50" VerticalAlignment="Top" Width="250" Content="Register" Background="Transparent" BorderBrush="BlanchedAlmond" Foreground="BlanchedAlmond" FontWeight="Bold"/>
     </Grid>
 </Window>

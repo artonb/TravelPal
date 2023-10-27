@@ -15,7 +15,7 @@ namespace TravelPal.Managers
 
         public static IUser signedInUser { get; set; }
 
-        public bool AddUser(string username, string password, Country location)
+        public static bool AddUser(string username, string password, Country location)
         {
             if (ValidateUsername(username))
             {
@@ -36,11 +36,11 @@ namespace TravelPal.Managers
 
         //}
 
-        private bool ValidateUsername(string username)
+        private static bool ValidateUsername(string username)
         {
             bool isValidUsername = false;
 
-            if (string.IsNullOrEmpty(username))
+            if (!string.IsNullOrEmpty(username))
             {
                 isValidUsername = true;
             }

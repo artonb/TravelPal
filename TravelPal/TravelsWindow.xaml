@@ -30,11 +30,11 @@
             </Image.Source>
         </Image>
         <Label Name="lblUsername" Grid.Row="0" Grid.Column="1" FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10 0" Foreground="BlanchedAlmond"/>
-        <ListView Grid.Row="1" Grid.Column="1" Grid.RowSpan="5" Margin="20" Background="Transparent" BorderBrush="BlanchedAlmond" Foreground="BlanchedAlmond"/>
+        <ListView Name="lstView" Grid.Row="1" Grid.Column="1" Grid.RowSpan="5" Margin="20" Background="Transparent" BorderBrush="BlanchedAlmond" Foreground="BlanchedAlmond" SelectionChanged="lstView_SelectionChanged"/>
         <Button Content="Details" Grid.Row="6" Grid.Column="1" Width="100" Height="40" HorizontalAlignment="Left" Margin="20 0" Background="Transparent" Foreground="BlanchedAlmond" BorderBrush="BlanchedAlmond" FontSize="15"/>
         <Button Content="Add Travel" Grid.Row="6" Grid.Column="1" Width="100" Height="40" HorizontalAlignment="Right" Margin="20 0" Background="Transparent" Foreground="BlanchedAlmond" BorderBrush="BlanchedAlmond" FontSize="15"/>
-        <Button Content="Remove" Grid.Row="6" Grid.Column="1" Width="100" Height="40" HorizontalAlignment="Center" Background="Transparent" Foreground="BlanchedAlmond" BorderBrush="BlanchedAlmond" FontSize="15"/>
-        <Button Content="UserDetails" Grid.Row="0" Grid.Column="0" Width="100" Height="40" HorizontalAlignment="Right" Margin="10 0" Background="Transparent" Foreground="BlanchedAlmond" BorderBrush="BlanchedAlmond" FontSize="15"/>
+        <Button Name="btnRemove" Content="Remove" Grid.Row="6" Grid.Column="1" Width="100" Height="40" HorizontalAlignment="Center" Background="Transparent" Foreground="BlanchedAlmond" BorderBrush="BlanchedAlmond" FontSize="15" Click="btnRemove_Click"/>
+        <Button Name="btnDetails" Content="UserDetails" Grid.Row="0" Grid.Column="0" Width="100" Height="40" HorizontalAlignment="Right" Margin="10 0" Background="Transparent" Foreground="BlanchedAlmond" BorderBrush="BlanchedAlmond" FontSize="15"/>
         <Button Name="howTo" Content="How-To Guide" Grid.Row="6" Grid.Column="0" Width="100" Height="40" HorizontalAlignment="Left" Margin="10 0" Background="Transparent" Foreground="BlanchedAlmond" BorderBrush="BlanchedAlmond" FontSize="15" Click="howTo_Click"/>
         <Button Name="btnSignOut" Content="Sign Out" Grid.Row="6" Grid.Column="0" Width="100" Height="40" HorizontalAlignment="Center" Background="Transparent" Foreground="BlanchedAlmond" BorderBrush="BlanchedAlmond" FontSize="15" Click="btnSignOut_Click"/>
     </Grid>

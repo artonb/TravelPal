@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Windows;
 using TravelPal.Enums;
 using TravelPal.Interface;
 using TravelPal.Models;
@@ -13,7 +14,7 @@ namespace TravelPal.Managers
             new User("user", "password", Country.Sweden)
         };
 
-        public static IUser signedInUser { get; set; }
+        public static IUser? signedInUser { get; set; }
 
         public static bool AddUser(string username, string password, Country location)
         {
@@ -47,9 +48,11 @@ namespace TravelPal.Managers
 
             foreach (var user in users)
             {
-                if (user.Username == username)
+                if (user.Username.Equals(username))
                 {
                     isValidUsername = false;
+                    MessageBox.Show("The username is already taken, please try again!");
+                    break;
                 }
             }
             return isValidUsername;

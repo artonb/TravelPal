@@ -11,11 +11,13 @@ namespace TravelPal
         public MainWindow()
         {
             InitializeComponent();
+
         }
 
         private void btnSignin_Click(object sender, RoutedEventArgs e)
         {
             //Läs innehållet i username och password-textrutorna
+
             string username = txtUsername.Text;
             string password = txtPassword.Password;
 
@@ -31,7 +33,7 @@ namespace TravelPal
             }
             else
             {
-                MessageBox.Show("Invalid username or password!", "Warning!");
+                MessageBox.Show("Invalid username or password, please try again!", "No account found!");
             }
 
             //Om inloggningen misslyckas, visa felmeddelande

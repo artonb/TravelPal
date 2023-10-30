@@ -29,5 +29,18 @@
                 <BitmapImage DecodePixelWidth="300" UriSource="Images/logo-no-background.png"/>
             </Image.Source>
         </Image>
+
+        <Label Content="City" Grid.Row="3" FontSize="30" HorizontalAlignment="Left" Foreground="BlanchedAlmond"/>
+        <TextBox Grid.Row="3" Height="30" Width="200" FontSize="20" Foreground="BlanchedAlmond" HorizontalAlignment="Right" Background="Transparent" BorderBrush="BlanchedAlmond"/>
+        <Label Content="Travellers" Grid.Row="5" FontSize="30" HorizontalAlignment="Left" Foreground="BlanchedAlmond"/>
+        <TextBox Grid.Row="5" Height="30" Width="200" FontSize="20" Foreground="BlanchedAlmond" HorizontalAlignment="Right" Background="Transparent" BorderBrush="BlanchedAlmond"/>
+        <ComboBox Name="boxCountry" Grid.Row="4" Height="25" Width="200" HorizontalAlignment="Right" VerticalAlignment="Center" Background="Transparent" BorderBrush="BlanchedAlmond"/>
+        <Label Content="Country" Grid.Row="4" FontSize="30" HorizontalAlignment="Left" Foreground="BlanchedAlmond"/>
+        <ComboBox Name="boxType" Grid.Row="6" Height="25" Width="200" HorizontalAlignment="Right" VerticalAlignment="Center" Background="Transparent" BorderBrush="BlanchedAlmond" SelectionChanged="boxType_SelectionChanged"/>
+        <Label Content="Trip type" Grid.Row="6" FontSize="30" HorizontalAlignment="Left" Foreground="BlanchedAlmond"/>
+        <CheckBox Name="hdnAll" Grid.Row="6" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin=" 20 0" Content="All inclusive" Foreground="BlanchedAlmond" FontSize="14" Visibility="Hidden"/>
+        <Label Name="hdnMeeting" Grid.Row="6" Grid.Column="1" Content="Meeting details" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="BlanchedAlmond" Margin="15 0" Visibility="Hidden"/>
+        <TextBox Name="hdnMeeting1" Grid.Row="6" Grid.Column="1" Height="30" Width="240" FontSize="20" Foreground="BlanchedAlmond" HorizontalAlignment="Right" Margin="20 0" Background="Transparent" BorderBrush="BlanchedAlmond" Visibility="Hidden"/>
+        <Button IsDefault="True" Name="btnAdd" Grid.Row="5" Grid.Column="1" FontSize="30" Height="50" VerticalAlignment="Center" HorizontalAlignment="Center" Width="200" Content="Add travel" Background="Transparent" BorderBrush="BlanchedAlmond" Foreground="BlanchedAlmond" FontWeight="Bold"/>
     </Grid>
 </Window>

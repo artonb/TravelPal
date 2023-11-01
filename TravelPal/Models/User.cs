@@ -13,7 +13,7 @@ namespace TravelPal.Models
         public Country Location { get; set; }
 
         //Add new props
-        public List<Travel> Travels { get; set; }
+        public List<Travel> Travels { get; set; } = new();
 
         public User(string username, string password, Country location)
         {
@@ -21,5 +21,15 @@ namespace TravelPal.Models
             Password = password;
             Location = location;
         }
+
+        //public void addTravel(Travel travelToAdd)
+        //{
+        //    Travels.Add(travelToAdd);
+        //}
+
+        //public void removeTravel(Travel travelToRemove)
+        //{
+        //    Travels.Add(travelToRemove);
+        //}
     }
 }

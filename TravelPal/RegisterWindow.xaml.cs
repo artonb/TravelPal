@@ -44,34 +44,13 @@ namespace TravelPal
             {
                 addUser = false;
             }
+        }
 
-            //TODO - Kolla om användarnamnet är upptaget!
-            // --------------------------------------- //
-
-
-            //foreach (var user in UserManager.users)
-            //{
-            //    if (username == user.Username)
-            //    {
-            //        MessageBox.Show("That username is taken!", "Warning!");
-            //        break;
-            //    }
-
-            //}
-
-            //if (username == "" || password == "")
-            //{
-            //    MessageBox.Show("Please add a username or password!", "Information missing!");
-            //}
-            //else
-            //{
-            //    bool addUser = UserManager.AddUser(username, password, country);
-            //    MessageBox.Show("You are now a part of the TravelPal-community!" + Environment.NewLine + "Press 'OK' or 'Enter' to sign in!", "Welcome new user!");
-            //    MainWindow mainWindow = new();
-            //    mainWindow.Show();
-            //    Close();
-            //}
-
+        private void btnReturn_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new();
+            mainWindow.Show();
+            Close();
         }
     }
 }

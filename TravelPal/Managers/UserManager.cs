@@ -8,19 +8,35 @@ namespace TravelPal.Managers
 {
     public class UserManager
     {
+
         public static List<IUser> users { get; set; } = new()
         {
             new Admin("admin", "password", Country.Sweden),
-            new User("user", "password", Country.Sweden)
+            new User("user", "password", Country.Sweden),
+        };
+        public List<Travel> Travels = new List<Travel>()
+        {
+            new Vacation("Malmö", Country.Sweden, 2, false),
+            new WorkTrip("Conference", "Stockholm", Country.Sweden, 4),
         };
 
         public static IUser? signedInUser { get; set; }
 
-        public static bool AddUser(string username, string password, Country location)
+        //public static bool AddUser(IUser userToAdd)
+        //{
+        //    if (ValidateUsername(userToAdd.Username))
+        //    {
+        //        User newUser = new(userToAdd.Username, userToAdd.Password, userToAdd.Location);
+        //        users.Add(newUser);
+        //        return true;
+        //    }
+        //    return false;
+        //}
+        public static bool AddUser(string username, string password, Country country)
         {
             if (ValidateUsername(username))
             {
-                User newUser = new(username, password, location);
+                User newUser = new(username, password, country);
                 users.Add(newUser);
                 return true;
             }

@@ -18,7 +18,7 @@ namespace TravelPal.Models
 
         public string GetInfo()
         {
-            return $"Your worktrip is to {Destination} in the country of {Countries} with a total of {Travellers} people. You are traveling there on the date of {startDate} and you are going home on the date of {endDate}.";
+            return $"Your worktrip is to {Destination} in the country of {Countries} with a total of {Travellers} people.";
         }
     }
 }

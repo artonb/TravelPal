@@ -37,6 +37,6 @@
         <Label Content="Country" Grid.Row="5" FontSize="30" HorizontalAlignment="Left" Foreground="BlanchedAlmond"/>
         <ComboBox Name="comboBox" Grid.Row="5" Height="25" Width="200" HorizontalAlignment="Right" VerticalAlignment="Center" Background="Transparent" BorderBrush="BlanchedAlmond"/>
         <Button IsDefault="True" Name="btnRegister" Grid.Row="6" Grid.Column="0" FontSize="30" Height="50" VerticalAlignment="Center" HorizontalAlignment="Right" Width="200" Content="Register" Background="Transparent" BorderBrush="BlanchedAlmond" Foreground="BlanchedAlmond" FontWeight="Bold" Click="btnRegister_Click"/>
-
+        <Button Name="btnReturn" Grid.Row="0" Grid.Column="0" FontSize="15" Height="25" VerticalAlignment="Top" HorizontalAlignment="Left" Width="150" Content="Return" Background="Transparent" BorderBrush="BlanchedAlmond" Foreground="BlanchedAlmond" FontWeight="Bold" Click="btnReturn_Click"/>
     </Grid>
 </Window>

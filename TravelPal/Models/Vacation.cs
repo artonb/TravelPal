@@ -9,9 +9,9 @@ namespace TravelPal.Models
         {
             this.allInclusive = allInclusive;
         }
-        public string GetInfo()
+        public override string GetInfo()
         {
-            return $"Your vacation is to {Destination} in the country of {Countries} with a total of {Travellers} people.";
+            return $"Your vacation is to {Destination} in the country of {Countries} with a total of {Travellers} people. It is {allInclusive} that you have all-inclusive!";
         }
     }
 }

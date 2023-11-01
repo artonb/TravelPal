@@ -16,9 +16,9 @@ namespace TravelPal.Models
 
         }
 
-        public string GetInfo()
+        public override string GetInfo()
         {
-            return $"Your worktrip is to {Destination} in the country of {Countries} with a total of {Travellers} people.";
+            return $"Your worktrip is to {Destination} in the country of {Countries} with a total of {Travellers} people. The meetings regards to {MeetingDetails}";
         }
     }
 }

@@ -13,6 +13,7 @@ namespace TravelPal
     public partial class TravelsWindow : Window
     {
         UserManager userManager;
+        User user;
         public TravelsWindow()
         {
             InitializeComponent();
@@ -20,13 +21,11 @@ namespace TravelPal
             if (UserManager.signedInUser.GetType() == typeof(Admin))
             {
                 btnAdd.Visibility = Visibility.Hidden;
-                btnRemove.Visibility = Visibility.Hidden;
                 howTo.Visibility = Visibility.Hidden;
             }
             else
             {
                 btnAdd.Visibility = Visibility.Visible;
-                btnRemove.Visibility = Visibility.Visible;
                 howTo.Visibility = Visibility.Visible;
             }
 
@@ -34,17 +33,27 @@ namespace TravelPal
             {
                 Admin admin = (Admin)UserManager.signedInUser;
                 List<Travel> allTravels = new();
+                allTravels = UserManager.GetAllUserTravels();
+
+                foreach (var travel in allTravels)
+                {
+                    ListViewItem item = new ListViewItem();
+                    item.Tag = travel;
+                    item.Content = travel.Countries;
+                    lstView.Items.Add(item);
+                }
 
             }
 
             if (UserManager.signedInUser.GetType() == typeof(User))
             {
                 User user = (User)UserManager.signedInUser;
-                List<Travel> travels = new();
-                travels = user.Travels;
-                foreach (Travel travel in travels)
+
+                List<Travel> existingTravels = new();
+                existingTravels = user.Travels;
+                foreach (Travel travel in existingTravels)
                 {
-                    ListViewItem item = new();
+                    ListViewItem item = new ListViewItem();
                     item.Tag = travel;
                     item.Content = travel.Countries;
                     lstView.Items.Add(item);
@@ -68,13 +77,21 @@ namespace TravelPal
         {
 
             ListViewItem selectedItem = (ListViewItem)lstView.SelectedItem;
+
             if (selectedItem != null)
             {
-                Travel selectedTravel = (Travel)selectedItem.Tag;
-                lstView.Items.Remove(selectedItem);
-                ListViewItem itemToRemove = (ListViewItem)lstView.SelectedItem;
-                lstView.Items.Remove(itemToRemove);
+                Travel travelToRemove = (Travel)selectedItem.Tag;
 
+                if (UserManager.signedInUser is User)
+                {
+                    ((User)UserManager.signedInUser).Travels.Remove(travelToRemove);
+                }
+                else if (UserManager.signedInUser is Admin)
+                {
+                    UserManager.AdminRemoveTravel(travelToRemove);
+                }
+
+                lstView.Items.Remove(selectedItem);
             }
             else
             {
@@ -84,11 +101,6 @@ namespace TravelPal
 
         private void lstView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            //foreach (ListViewItem item in lstView.Items)
-            //{
-            //    ListBoxItem selectedItem = (ListViewItem)lstView.SelectedItem;
-
-            //}
         }
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
@@ -104,7 +116,7 @@ namespace TravelPal
             if (selectedItem != null)
             {
                 Travel selectedTravel = (Travel)selectedItem.Tag;
-                TravelDetailsWindow travelDetailWindow = new();
+                TravelDetailsWindow travelDetailWindow = new(selectedTravel);
                 travelDetailWindow.Show();
                 Close();
             }

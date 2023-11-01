@@ -7,6 +7,30 @@
         mc:Ignorable="d"
         Title="TravelDetailsWindow" Height="450" Width="800">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.Background>
+            <ImageBrush ImageSource="Images/TravelPal.jpg"/>
+        </Grid.Background>
+        <Image Width="250" Height="170" Grid.Row="0" Grid.RowSpan="6">
+            <Image.Source>
+                <BitmapImage DecodePixelWidth="300" UriSource="Images/logo-no-background.png"/>
+            </Image.Source>
+        </Image>
+        <Label Name="lblUsername" Grid.Row="0" Grid.Column="1" FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10 0" Foreground="BlanchedAlmond"/>
+        <ListView Name="lstView" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="5" Margin="20" Background="Transparent" BorderBrush="BlanchedAlmond" Foreground="BlanchedAlmond" SelectionChanged="lstView_SelectionChanged"/>
+        <Button Name="btnReturn" Grid.Row="0" Grid.Column="0" FontSize="15" Height="25" VerticalAlignment="Top" HorizontalAlignment="Left" Width="150" Content="Return" Background="Transparent" BorderBrush="BlanchedAlmond" Foreground="BlanchedAlmond" FontWeight="Bold" Click="btnReturn_Click"/>
     </Grid>
 </Window>

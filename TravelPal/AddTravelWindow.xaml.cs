@@ -46,8 +46,6 @@ namespace TravelPal
             string destination = txtCity.Text;
             Country countries = (Country)boxCountry.SelectedItem;
             int travellers = Convert.ToInt32(txtTravellers.Text);
-
-            //User signedInUser = (User)UserManager.signedInUser;
             string trip = (string)boxType.SelectedItem;
             IUser u = UserManager.signedInUser;
             User signedInUser = (User)u;

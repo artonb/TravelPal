@@ -15,11 +15,12 @@ namespace TravelPal.Models
         //Add new props
         public List<Travel> Travels { get; set; } = new();
 
-        public User(string username, string password, Country location)
+        public User(string username, string password, Country location)/*List<Travel> travels*/
         {
             Username = username;
             Password = password;
             Location = location;
+            //Travels = travels;
         }
 
         //public void addTravel(Travel travelToAdd)

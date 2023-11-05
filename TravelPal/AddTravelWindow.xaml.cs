@@ -9,22 +9,19 @@ namespace TravelPal
 {
     public partial class AddTravelWindow : Window
     {
-
         public AddTravelWindow(UserManager users)
         {
             InitializeComponent();
+            //Displaya länder och resetyp i comboboxar.
             boxCountry.ItemsSource = Enum.GetValues(typeof(Country));
             boxCountry.SelectedIndex = 0;
             boxType.Items.Add("Vacation");
             boxType.Items.Add("Work trip");
             boxType.SelectedIndex = 0;
-
-
-
         }
-
         private void boxType_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
+            //Visa endast allInclusive om vacation väljs och vice verca med workTrip.
             if (boxType.SelectedIndex == 0)
             {
                 hdnMeeting.Visibility = Visibility.Hidden;
@@ -41,7 +38,7 @@ namespace TravelPal
 
         public void btnAdd_Click(object sender, RoutedEventArgs e)
         {
-
+            //Skippa metoder i TravelManager, använd UserManager istället
             string meetingDetails = hdnMeeting1.Text;
             string destination = txtCity.Text;
             Country countries = (Country)boxCountry.SelectedItem;
@@ -67,6 +64,7 @@ namespace TravelPal
 
         private void btnReturn_Click(object sender, RoutedEventArgs e)
         {
+            //Återvänd till föregående fönster
             TravelsWindow travelsWindow = new();
             travelsWindow.Show();
             Close();

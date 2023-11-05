@@ -1,5 +1,6 @@
 ﻿namespace TravelPal.Enums
 {
+    //Lägg till länder i en Enum
     public enum Country
     {
         Afghanistan,

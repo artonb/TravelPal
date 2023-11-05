@@ -6,7 +6,7 @@ namespace TravelPal.Models
 {
     public class Admin : IUser
     {
-        //Add props from IUser
+        //Lägg till props
         public string Username { get; set; }
         public string Password { get; set; }
 
@@ -14,7 +14,7 @@ namespace TravelPal.Models
 
         public List<Travel> Travels { get; set; } = new();
 
-        //Add constructor
+        //Lägg till constructor
         public Admin(string username, string password, Country location)
         {
             Username = username;

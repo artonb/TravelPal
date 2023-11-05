@@ -13,6 +13,7 @@ namespace TravelPal
         {
             InitializeComponent();
 
+            //Visar detaljer på resorna genom GetInfo()-metoderna i respektive restyp.
             ListViewItem item = new();
             item.Tag = selectedTravel;
             item.Content = selectedTravel.GetInfo();
@@ -21,6 +22,7 @@ namespace TravelPal
 
         private void btnReturn_Click(object sender, RoutedEventArgs e)
         {
+            //Går till föregående fönster
             TravelsWindow travelsWindow = new();
             travelsWindow.Show();
             Close();

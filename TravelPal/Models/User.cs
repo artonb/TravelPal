@@ -6,15 +6,13 @@ namespace TravelPal.Models
 {
     public class User : IUser
     {
-        //Add props from IUser
+        //Lägg till props
         public string Username { get; set; }
         public string Password { get; set; }
-
         public Country Location { get; set; }
-
-        //Add new props
         public List<Travel> Travels { get; set; } = new();
 
+        //Lägg till constructor
         public User(string username, string password, Country location)/*List<Travel> travels*/
         {
             Username = username;
@@ -22,15 +20,5 @@ namespace TravelPal.Models
             Location = location;
             //Travels = travels;
         }
-
-        //public void addTravel(Travel travelToAdd)
-        //{
-        //    Travels.Add(travelToAdd);
-        //}
-
-        //public void removeTravel(Travel travelToRemove)
-        //{
-        //    Travels.Add(travelToRemove);
-        //}
     }
 }

@@ -21,7 +21,6 @@ namespace TravelPal.Managers
             }
         };
 
-
         public static IUser? signedInUser { get; set; }
 
         public static bool AddUser(string username, string password, Country country /*List<Travel> travels*/)
@@ -34,11 +33,9 @@ namespace TravelPal.Managers
             }
             return false;
         }
-
         public static List<Travel> GetAllUserTravels()
         {
-            // Returnera alla användares resor
-
+            //Returnera alla användares resor
             List<Travel> allUserTravels = new();
 
             foreach (var user in users)
@@ -53,9 +50,9 @@ namespace TravelPal.Managers
 
             return allUserTravels;
         }
-
         public static void AdminRemoveTravel(Travel travelToRemove)
         {
+            //Radera resor från Adminlogin
             foreach (var user in users)
             {
                 if (user is User)
@@ -72,17 +69,6 @@ namespace TravelPal.Managers
                 }
             }
         }
-
-        //public void RemoveUser(string username, string password, Country location)
-        //{
-
-        //}
-
-        //public bool UpdateUsername(string username)
-        //{
-
-        //}
-
         private static bool ValidateUsername(string username)
         {
             bool isValidUsername = false;
@@ -103,7 +89,6 @@ namespace TravelPal.Managers
             }
             return isValidUsername;
         }
-
         public static bool signInUser(string username, string password)
         {
             foreach (var user in users)

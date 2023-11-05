@@ -3,20 +3,11 @@ using TravelPal.Managers;
 
 namespace TravelPal
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
         {
             InitializeComponent();
-            //Admin admin = new Admin("admin", "password", Country.Sweden);
-            //User user = new User("user", "password", Country.Sweden);
-            //Vacation malmö = new("Malmö", Country.Sweden, 2, false);
-            //Vacation stockholm = new("Stockholm", Country.Sweden, 4, true);
-            //user.Travels.Add(malmö);
-            //user.Travels.Add(stockholm);
         }
         private void btnSignin_Click(object sender, RoutedEventArgs e)
         {
@@ -29,6 +20,7 @@ namespace TravelPal
             bool isSignedIn = UserManager.signInUser(username, password);
 
             //Om inloggningen lyckas, öppna TravelsWindow
+            //Om inloggningen misslyckas, visa felmeddelande
             if (isSignedIn)
             {
                 TravelsWindow travelsWindow = new();
@@ -39,13 +31,11 @@ namespace TravelPal
             {
                 MessageBox.Show("Invalid username or password, please try again!", "No account found!");
             }
-
-            //Om inloggningen misslyckas, visa felmeddelande
-
         }
 
         private void btnRegister_Click(object sender, RoutedEventArgs e)
         {
+            //Gå till register-fönster
             RegisterWindow registerWindow = new();
             registerWindow.Show();
             Close();

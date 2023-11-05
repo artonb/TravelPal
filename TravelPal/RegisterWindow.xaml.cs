@@ -33,16 +33,17 @@ namespace TravelPal
             string password = rgstrPassword.Password;
             Country country = (Country)comboBox.SelectedItem;
             bool addUser = UserManager.AddUser(username, password, country);
-            if (addUser)
+            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
+            {
+                MessageBox.Show("Please fill out all the information", "Warning!");
+                addUser = false;
+            }
+            else if (addUser)
             {
                 MessageBox.Show("You are now a part of the TravelPal-community!" + Environment.NewLine + "Press 'OK' or 'Enter' to sign in!", "Welcome new user!");
                 MainWindow mainWindow = new();
                 mainWindow.Show();
                 Close();
-            }
-            else
-            {
-                addUser = false;
             }
         }
 

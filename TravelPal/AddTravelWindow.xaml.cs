@@ -12,8 +12,9 @@ namespace TravelPal
         public AddTravelWindow(UserManager users)
         {
             InitializeComponent();
-            //Displaya länder och resetyp i comboboxar.
+            //Displaya länder och resetyp i comboboxar
             boxCountry.ItemsSource = Enum.GetValues(typeof(Country));
+            txtTravellers.Text = "0";
             boxCountry.SelectedIndex = 0;
             boxType.Items.Add("Vacation");
             boxType.Items.Add("Work trip");
@@ -46,7 +47,12 @@ namespace TravelPal
             string trip = (string)boxType.SelectedItem;
             IUser u = UserManager.signedInUser;
             User signedInUser = (User)u;
-            if (trip == "Work trip")
+            if (string.IsNullOrEmpty(destination))
+            {
+                MessageBox.Show("Please input all the boxes", "Warning!");
+                return;
+            }
+            else if (trip == "Work trip")
             {
                 WorkTrip worktrip = new WorkTrip(meetingDetails, destination, countries, travellers);
                 signedInUser.Travels.Add(worktrip);

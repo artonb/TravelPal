@@ -9,6 +9,8 @@ namespace TravelPal
         {
             InitializeComponent();
         }
+
+
         private void btnSignin_Click(object sender, RoutedEventArgs e)
         {
             //Läs innehållet i username och password-textrutorna
@@ -40,5 +42,7 @@ namespace TravelPal
             registerWindow.Show();
             Close();
         }
+
+
     }
 }

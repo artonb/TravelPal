@@ -8,6 +8,7 @@ namespace TravelPal.Managers
 {
     public class UserManager
     {
+        //Lägg till användarna och två hårdkodade resor
         public static List<IUser> users { get; set; } = new()
         {
             new Admin("admin", "password", Country.Sweden),
@@ -25,6 +26,7 @@ namespace TravelPal.Managers
 
         public static bool AddUser(string username, string password, Country country /*List<Travel> travels*/)
         {
+            //Lägg till användare om användarnamn inte är upptaget
             if (ValidateUsername(username))
             {
                 User newUser = new(username, password, country);
